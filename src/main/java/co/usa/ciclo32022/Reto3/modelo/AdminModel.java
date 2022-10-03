@@ -1,33 +1,35 @@
-package co.usa.ciclo32022.Reto3.Model;
+package co.usa.ciclo32022.Reto3.modelo;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-@Table(name="reserva")
-public class ReservationModel implements Serializable {
 
-   @Id
+
+@Entity
+@Table (name="admin")
+public class AdminModel implements Serializable {
+
+    @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String email;
-    private Integer age;
+    private String password;
 
-    public ReservationModel() {
+    public AdminModel() {
     }
 
-    public ReservationModel(String name, String email, Integer age) {
+    public AdminModel(String name, String email, String password) {
         this.name = name;
         this.email = email;
-        this.age = age;
+        this.password = password;
     }
 
-    public ReservationModel(Integer id, String name, String email, Integer age) {
+    public AdminModel(Integer id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.age = age;
+        this.password = password;
     }
 
     public Integer getId() {
@@ -54,21 +56,21 @@ public class ReservationModel implements Serializable {
         this.email = email;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
-        return "ReservationModel{" +
+        return "AdminModel{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", age=" + age +
+                ", password='" + password + '\'' +
                 '}';
     }
 }
