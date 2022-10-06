@@ -44,6 +44,7 @@ public class AdminController {
     }
 
     @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
     public AdminModel updateAdmin(@RequestBody AdminModel adminModel){
         return adminService.updateAdmin(adminModel);
     }
