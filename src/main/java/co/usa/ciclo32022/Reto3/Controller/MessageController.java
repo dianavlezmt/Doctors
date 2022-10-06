@@ -41,6 +41,4 @@ public class MessageController {
     public MessageModel updateMessage(@RequestBody MessageModel messageModel){
         return messageService.updateMessage(messageModel);
     }
-
-
 }
