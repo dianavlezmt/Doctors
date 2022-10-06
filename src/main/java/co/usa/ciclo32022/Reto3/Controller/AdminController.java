@@ -34,6 +34,7 @@ public class AdminController {
     }
 
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public AdminModel saveAdmin(@RequestBody AdminModel adminModel){
         return adminService.saveAdmin(adminModel);
     }

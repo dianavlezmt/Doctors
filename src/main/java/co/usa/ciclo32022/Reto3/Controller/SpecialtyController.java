@@ -33,6 +33,7 @@ public class SpecialtyController {
     }
 
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public SpecialtyModel saveSpecialty(@RequestBody SpecialtyModel specialtyModel){
         return specialtyService.saveSpecialty(specialtyModel);
     }

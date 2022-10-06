@@ -33,6 +33,7 @@ public class ClientController {
     }
 
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public ClientModel saveClient(@RequestBody ClientModel clientModel){
         return clientService.saveClient(clientModel);
     }
@@ -47,7 +48,4 @@ public class ClientController {
     public ClientModel updateClient(@RequestBody ClientModel clientModel){
         return clientService.updateClient(clientModel);
     }
-
-
-
 }

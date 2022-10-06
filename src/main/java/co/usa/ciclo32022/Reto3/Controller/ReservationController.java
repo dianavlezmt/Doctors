@@ -35,6 +35,7 @@ public class ReservationController {
     }
 
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public ReservationModel saveReservation(@RequestBody ReservationModel reservationModel){
         return reservationService.saveReservation(reservationModel);
     }
