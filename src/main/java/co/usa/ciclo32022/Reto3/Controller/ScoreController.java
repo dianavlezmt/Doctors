@@ -4,6 +4,7 @@ package co.usa.ciclo32022.Reto3.Controller;
 import co.usa.ciclo32022.Reto3.Service.ScoreService;
 import co.usa.ciclo32022.Reto3.modelo.ScoreModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,13 @@ public class ScoreController {
     public List<ScoreModel> getAllScores(){
         return scoreService.getAllScores();
     }
+
+    @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<ScoreModel> getAllScores2(){
+        return scoreService.getAllScores();
+    }
+
     @GetMapping("/{id}")
     public Optional<ScoreModel> getScore(@PathVariable Integer id){
         return scoreService.getScore(id);

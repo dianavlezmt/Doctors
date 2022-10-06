@@ -3,6 +3,7 @@ package co.usa.ciclo32022.Reto3.Controller;
 import co.usa.ciclo32022.Reto3.Service.MessageService;
 import co.usa.ciclo32022.Reto3.modelo.MessageModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +19,12 @@ public class MessageController {
 
     @GetMapping("/all")
     public List<MessageModel> getAllMessages(){
+        return messageService.getAllMessages();
+    }
+
+    @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<MessageModel> getAllMessages2(){
         return messageService.getAllMessages();
     }
 

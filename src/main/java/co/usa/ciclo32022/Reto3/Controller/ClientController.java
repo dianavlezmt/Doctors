@@ -3,6 +3,7 @@ package co.usa.ciclo32022.Reto3.Controller;
 import co.usa.ciclo32022.Reto3.Service.ClientService;
 import co.usa.ciclo32022.Reto3.modelo.ClientModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,12 @@ public class ClientController {
 
     @GetMapping("/all")
     public List<ClientModel> getAllClients(){
+        return clientService.getAllClients();
+    }
+
+    @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<ClientModel> getAllClients2(){
         return clientService.getAllClients();
     }
 

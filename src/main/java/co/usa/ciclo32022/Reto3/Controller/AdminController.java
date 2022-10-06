@@ -3,6 +3,7 @@ package co.usa.ciclo32022.Reto3.Controller;
 import co.usa.ciclo32022.Reto3.Service.AdminService;
 import co.usa.ciclo32022.Reto3.modelo.AdminModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +19,12 @@ public class AdminController {
 
     @GetMapping("/all")
     public List<AdminModel> getAllAdmins(){
+        return adminService.getAllAdmins();
+    }
+
+    @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<AdminModel> getAllAdmins2(){
         return adminService.getAllAdmins();
     }
 

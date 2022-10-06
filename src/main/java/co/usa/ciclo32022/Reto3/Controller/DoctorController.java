@@ -3,6 +3,7 @@ package co.usa.ciclo32022.Reto3.Controller;
 import co.usa.ciclo32022.Reto3.Service.DoctorService;
 import co.usa.ciclo32022.Reto3.modelo.DoctorModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,13 @@ public class DoctorController {
     public List<DoctorModel> getAllDoctors(){
         return doctorService.getAllDoctors();
     }
+
+    @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<DoctorModel> getAllDoctors2(){
+        return doctorService.getAllDoctors();
+    }
+
     @GetMapping("/{id}")
     public Optional <DoctorModel> getDoctor(@PathVariable Integer id){
         return doctorService.getDoctor(id);

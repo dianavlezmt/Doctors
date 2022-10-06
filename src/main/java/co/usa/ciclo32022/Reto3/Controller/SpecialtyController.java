@@ -3,6 +3,7 @@ package co.usa.ciclo32022.Reto3.Controller;
 import co.usa.ciclo32022.Reto3.Service.SpecialtyService;
 import co.usa.ciclo32022.Reto3.modelo.SpecialtyModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,12 @@ public class SpecialtyController {
     public List<SpecialtyModel> getAllSpecialties(){
         return specialtyService.getAllSpecialties();
     }
+    @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<SpecialtyModel> getAllSpecialties2(){
+        return specialtyService.getAllSpecialties();
+    }
+
     @GetMapping("/{id}")
     public Optional<SpecialtyModel> getSpecialty(@PathVariable Integer id){
         return specialtyService.getSpecialty(id);
